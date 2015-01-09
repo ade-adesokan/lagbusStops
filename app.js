@@ -11,6 +11,9 @@ app.set('port', (process.env.PORT || 3000));
 
 app.use('/api', router);
 
+app.get('/', function(request, response) {
+ response.redirect('/api');
+});
 
 app.listen(app.get('port'), function() {
  console.log("Node app is running at localhost:" + app.get('port'));
